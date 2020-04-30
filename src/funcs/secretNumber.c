@@ -9,15 +9,30 @@
 /**
  * \fn int secretNumber(int password, FILE *outStream)
  *
+ * \author TheSawIsTheLaw
+ *
  * \param[in] int password
  *
- * \param[out] FILE_ERROR     - поток вывода не доступен
- * \param[out] PASSWORD_ERROR - в функцию был передан неверный пароль
- *
- * \param[out] SUCCESS        - удачное завершение выполнения
+ * \param[out] errorCode - код удачного завершения или ошибки
  *
  * \brief Функция по секретному паролю по переданному адресу потока
  * передаёт секретное число
+ *
+ * \code
+ * int check = FILE_ERROR;
+ *
+ * if (!outStream)
+ *     return check;
+ *
+ * check = PASSWORD_ERROR;
+ * if (password)
+ *     return check;
+ *
+ * fprintf(outStream, "%d", SATAN);
+ *
+ * check = SUCCESS;
+ * return check;
+ * \endcode
  *
  * \return Код ошибки или удачного завершения
  */
