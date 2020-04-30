@@ -7,7 +7,7 @@
 #include "defines.h"
 
 /**
- * \fn int secretNumber
+ * \fn int secretNumber(int password, FILE *outStream)
  *
  * \param[in] int password
  *
